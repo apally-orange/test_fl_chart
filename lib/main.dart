@@ -46,9 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
       double val = (random.nextDouble() * 64) - 30;
       dataTemp.add(FlSpot(i.toDouble(), val));
     }
+    double val2 = (random.nextDouble() * 150);
     for (int i = 0; i < 10; i++) {
-      double val = (random.nextDouble() * 150);
-      dataSnow.add(FlSpot(i.toDouble(), val));
+      dataSnow.add(FlSpot(i.toDouble(), val2));
+      double evol = (random.nextDouble() * 10);
+      if (random.nextBool() == true) evol = evol * -1.0;
+      val2 = val2 + evol;
     }
 
     _listDataTemp.add(LineChartBarData(
